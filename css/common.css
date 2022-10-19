@@ -4,8 +4,8 @@
 
 body {
   margin: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
@@ -21,4 +21,52 @@ input {
 button {
   padding: 8px 12px;
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 80vw; */
+  margin-top: 50px;
+  flex-basis: calc((100% - 60px) / 3);
+}
+
+.gallery > li {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  /* padding-bottom: 28%; */
+  overflow: hidden;
+  transition: all 250ms ease-in;
+  transform: scale(1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+}
+
+.gallery > li:not(:last-child) {
+  margin-right: 10px;
+}
+.gallery > li:hover {
+  z-index: 2;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  transition: all 250ms ease-in;
+  transform: scale(1.4);
+}
+
+img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
