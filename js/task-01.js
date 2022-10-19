@@ -1,15 +1,15 @@
 // var 1
-const categoriesRef = document.getElementById("categories");
-const listCategories = categoriesRef.children;
-const lengthAmountCategories = listCategories.length;
-console.log("Number of categories: ", lengthAmountCategories);
+const categoriesEl = document.getElementById("categories").children.length;
+console.log(`Number of categories: ${categoriesEl}`);
 
-for (let category of listCategories) {
-  console.log("Category: ", category.firstElementChild.textContent);
-  console.log("Elements: ", category.lastElementChild.children.length);
-}
+const arrayTitlesCategoriesRef = document.querySelectorAll("h2");
+arrayTitlesCategoriesRef.forEach((title) => {
+  console.log("Category:", title.textContent);
+  console.log("Elements:", title.nextElementSibling.children.length);
+});
 
 // var 2
+/*
 const categoriesAll = document.querySelector("#categories");
 const categoriesLength = categoriesAll.children.length;
 console.log(`Number of categories: ${categoriesLength}`);
@@ -21,14 +21,15 @@ itemsElement.forEach((item) => {
 });
 
 // var 3
-const categoriesEl = document.getElementById("categories").children.length;
-console.log(`Number of categories: ${categoriesEl}`);
+const categoriesRef = document.getElementById("categories");
+const listCategories = categoriesRef.children;
+const lengthAmountCategories = listCategories.length;
+console.log("Number of categories: ", lengthAmountCategories);
 
-const arrayTitlesCategoriesRef = document.querySelectorAll("h2");
-arrayTitlesCategoriesRef.forEach((title) => {
-  console.log("Category:", title.textContent);
-  console.log("Elements:", title.nextElementSibling.children.length);
-});
+for (let category of listCategories) {
+  console.log("Category: ", category.firstElementChild.textContent);
+  console.log("Elements: ", category.lastElementChild.children.length);
+}
 
 // 4
 const categories = document.querySelectorAll("li.item");
@@ -56,3 +57,4 @@ const getInfoOfItems = [...categoriesAllRef]
   )
   .join("\n");
 console.log(getInfoOfItems);
+*/
