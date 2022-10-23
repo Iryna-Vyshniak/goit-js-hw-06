@@ -50,6 +50,13 @@ button {
   transform: all 250ms linear;
 }
 
+button.change-color {
+  width: 88px;
+  height: 88px;
+  border: none;
+  background: linear-gradient(to right, #f12711, #f5af19);
+}
+
 span {
   margin: 0 15px;
 }
