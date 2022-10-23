@@ -16,7 +16,9 @@ body {
 input {
   padding: 8px;
   font: inherit;
+}
 
+input[type='text'] {
   width: 20.4rem;
   height: 3rem;
   border: none;
@@ -27,10 +29,10 @@ input {
   font-family: inherit;
   color: #9baacf;
 }
-input::placeholder {
+input[type='text']::placeholder {
   color: #bec8e4;
 }
-input:focus {
+input[type='text']:focus {
   outline: none;
   box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
 }
