@@ -57,6 +57,13 @@ button.change-color {
   background: linear-gradient(to right, #f12711, #f5af19);
 }
 
+button[data-create],
+button[data-destroy] {
+  width: 88px;
+  height: 40px;
+  border: 15px;
+}
+
 span {
   margin: 0 15px;
 }
