@@ -23,4 +23,3 @@ const galleryMarkup = images.reduce(
 const gallery = document.querySelector(".gallery");
 gallery.insertAdjacentHTML("afterbegin", galleryMarkup);
 
-console.log(gallery);
