@@ -26,17 +26,19 @@ loginForm.addEventListener('submit', submitHandler);
 const profile = {};
 
 function submitHandler(event) {
-    const email = event.currentTarget.elements.email;
-    const password = event.currentTarget.elements.password;
+  event.preventDefault();
 
-    if (email.value === '' || password.value === '') {
-        alert("Please fill in all the fields!");
-    } else {
-        profile.email = email.value;
-        profile.password = password.value;
-        console.log(`Email: ${email.value},\nPassword: ${password.value}`);
-        console.log(profile);
-    }
-    event.currentTarget.reset();
+  const email = event.currentTarget.elements.email;
+  const password = event.currentTarget.elements.password;
+
+  if (email.value === '' || password.value === '') {
+    alert("Please fill in all the fields!");
+  } else {
+    profile.email = email.value;
+    profile.password = password.value;
+    console.log(`Email: ${email.value},\nPassword: ${password.value}`);
+    console.log(profile);
+  }
+  event.currentTarget.reset();
 }
 
