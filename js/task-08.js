@@ -36,7 +36,7 @@ function submitHandler(event) {
   } else {
     profile.email = email.value;
     profile.password = password.value;
-    console.log(`Email: ${email.value},\nPassword: ${password.value}`);
+
     console.log(profile);
   }
   event.currentTarget.reset();
