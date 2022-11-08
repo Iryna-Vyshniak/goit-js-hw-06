@@ -8,33 +8,34 @@
     <link rel="stylesheet" href="css/common.css" />
     <style>
       .login-form {
-        max-width: 320px;
+        max-width: 480px;
         display: flex;
         flex-direction: column;
       }
 
-      .login-form label {
-        margin-bottom: 16px;
+      .login-form span {
+        display: block;
+        margin-bottom: 10px;
       }
 
       .login-form input,
       .login-form button {
         width: 100%;
-        padding: 4px;
+        padding: 14px;
         font: inherit;
       }
     </style>
   </head>
   <body>
-    <p><a href="index.html">Go back</a></p>
+    <p><a class="main-link" href="index.html">Go back</a></p>
 
     <form class="login-form">
       <label>
-        Email
+        <span>Email</span>
         <input type="email" name="email" />
       </label>
       <label>
-        Password
+        <span>Password</span>
         <input type="password" name="password" />
       </label>
       <button type="submit">Login</button>
