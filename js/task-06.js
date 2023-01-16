@@ -1,5 +1,5 @@
 /*
-Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
+Написати скрипт, який під час втрати фокусу на інпуті (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
 
 <input
   type="text"
@@ -10,7 +10,7 @@
 
 Яка кількість смиволів повинна бути в інпуті, зазначається в його атрибуті data-length.
 Якщо введена правильна кількість символів, то border інпуту стає зеленим, якщо неправильна кількість - червоним.
-Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
+Для додавання стилів використати CSS-класи valid і invalid, які вже додані у вихідні файли завдання.
 
 #validation-input {
   border: 3px solid #bdbdbd;
@@ -40,7 +40,10 @@ function onBlurBorderColor(event) {
     inputRef.classList.remove('valid');
     inputRef.classList.remove('invalid');
   }
-  if (inputRef.value.length !== Number(inputRef.dataset.length) && inputRef.value.length !== 0) {
+  if (
+    inputRef.value.length !== Number(inputRef.dataset.length) &&
+    inputRef.value.length !== 0
+  ) {
     inputRef.classList.add('invalid');
   }
 }
