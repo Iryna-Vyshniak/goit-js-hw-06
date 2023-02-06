@@ -31,7 +31,7 @@ inputRef.addEventListener('blur', onBlurBorderColor);
 
 // var1
 function onBlurBorderColor(event) {
-  let inputValue = event.currentTarget.value;
+  let inputValue = event.currentTarget.value.trim();
   if (inputValue.length === Number(inputRef.dataset.length)) {
     inputRef.classList.add('valid');
     inputRef.classList.remove('invalid');

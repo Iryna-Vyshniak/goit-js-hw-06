@@ -25,22 +25,44 @@ body.style.color = '#eeeeee';
 
 const loginForm = document.querySelector('.login-form');
 
-loginForm.addEventListener('submit', submitHandler);
-const profile = {};
+//1st variant
+// loginForm.addEventListener('submit', submitHandler);
+// const profile = {};
 
-function submitHandler(event) {
-  event.preventDefault();
+// function submitHandler(event) {
+//   event.preventDefault();
 
-  const email = event.currentTarget.elements.email;
-  const password = event.currentTarget.elements.password;
+//   const email = event.currentTarget.elements.email;
+//   const password = event.currentTarget.elements.password;
 
-  if (email.value === '' || password.value === '') {
-    alert('Please fill in all the fields!');
+//   if (email.value === '' || password.value === '') {
+//     alert('Please fill in all the fields!');
+//   } else {
+//     profile.email = email.value;
+//     profile.password = password.value;
+
+//     console.log(profile);
+//   }
+//   event.currentTarget.reset();
+// }
+
+//2nd variant
+loginForm.addEventListener('submit', handleFormSubmit);
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const {
+    elements: { email, password },
+  } = e.currentTarget;
+
+  if (email.value.trim() === '' || password.value.trim() === '') {
+    return alert('Please fill in all the fields!');
   } else {
-    profile.email = email.value;
-    profile.password = password.value;
+    const formData = new FormData(e.currentTarget);
 
-    console.log(profile);
+    formData.forEach((value, name) => {
+      console.log(`${name} ${value}`);
+    });
   }
-  event.currentTarget.reset();
+  e.currentTarget.reset();
 }
