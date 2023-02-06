@@ -74,36 +74,50 @@ divBoxesEl.style.marginTop = '30px';
 //   return (divBoxesEl.innerHTML = '');
 // }
 
+// --- next variant -------------------------------------------
+
 createBtnEl.addEventListener('click', () => {
-  console.log(inputNumberEl.value);
-  Number(inputNumberEl.value) > Number(inputNumberEl.max) ||
-  Number(inputNumberEl.value) < Number(inputNumberEl.min)
+  //console.log(inputNumberEl.value);
+  Number(inputNumberEl.value.trim()) > Number(inputNumberEl.max) ||
+  Number(inputNumberEl.value.trim()) < Number(inputNumberEl.min)
     ? alert('Please enter number from 1 to 100')
-    : createBoxes(inputNumberEl.value);
+    : createBoxes(inputNumberEl.value.trim());
   inputNumberEl.value = '';
 });
 
 destroyBtnEl.addEventListener('click', destroyBoxes);
 
-function createBoxes(amount) {
-  let defaultSize = 30;
-  const boxesArr = [];
-  for (let i = 0; i < amount; i += 1) {
-    defaultSize += 10 * i;
-    const div = document.createElement('div');
-    div.classList = 'item';
-    div.style.width = `${defaultSize}px`;
-    div.style.height = `${defaultSize}px`;
-    div.style.marginRight = '30px';
-    div.style.marginBottom = '30px';
-    div.style.backgroundColor = getRandomHexColor();
-    boxesArr.push(div);
-    console.log('arr length', boxesArr.length);
-  }
-  return divBoxesEl.append(...boxesArr);
-}
-
 function destroyBoxes() {
   inputNumberEl.value = '';
   divBoxesEl.innerHTML = '';
+}
+
+// function createBoxes(amount) {
+//   let defaultSize = 30;
+//   const boxesArr = [];
+//   for (let i = 0; i < amount; i += 1) {
+//     defaultSize += 10 * i;
+//     const div = document.createElement('div');
+//     div.classList = 'item';
+//     div.style.width = `${defaultSize}px`;
+//     div.style.height = `${defaultSize}px`;
+//     div.style.marginRight = '30px';
+//     div.style.marginBottom = '30px';
+//     div.style.backgroundColor = getRandomHexColor();
+//     boxesArr.push(div);
+//     console.log('arr length', boxesArr.length);
+//   }
+//   return divBoxesEl.append(...boxesArr);
+// }
+
+// --- next variant function createBoxes ()--------------------
+function createBoxes(amount) {
+  let size = 30;
+  const boxesArr = [];
+  for (let i = 0; i < amount; i += 1) {
+    size += 10 * i;
+    const div = `<div class="item" style="display: block; margin-right: 30px; margin-bottom: 30px; background-color: ${getRandomHexColor()}; width: ${size}px; height: ${size}px;"></div>`;
+    boxesArr.push(div);
+  }
+  divBoxesEl.insertAdjacentHTML('beforeend', boxesArr.join(''));
 }
