@@ -54,7 +54,7 @@ button.change-color {
   width: 88px;
   height: 88px;
   border: none;
-  background: linear-gradient(to right, #f12711, #f5af19);
+  background-color: transparent;
 }
 
 button[data-create],
@@ -415,4 +415,8 @@ h1,
     rgba(0, 0, 0, 0.22),
     rgba(255, 255, 255, 0.25)
   );
+}
+
+span#name-output {
+  margin: 0;
 }
