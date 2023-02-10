@@ -78,10 +78,14 @@ divBoxesEl.style.marginTop = '30px';
 
 createBtnEl.addEventListener('click', () => {
   //console.log(inputNumberEl.value);
-  Number(inputNumberEl.value.trim()) > Number(inputNumberEl.max) ||
-  Number(inputNumberEl.value.trim()) < Number(inputNumberEl.min)
-    ? alert('Please enter number from 1 to 100')
-    : createBoxes(inputNumberEl.value.trim());
+  if (
+    Number(inputNumberEl.value.trim()) > Number(inputNumberEl.max) ||
+    Number(inputNumberEl.value.trim()) < Number(inputNumberEl.min)
+  ) {
+    alert('Please enter number from 1 to 100');
+  } else {
+    createBoxes(inputNumberEl.value.trim());
+  }
   inputNumberEl.value = '';
 });
 
