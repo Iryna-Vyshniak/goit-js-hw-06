@@ -33,8 +33,9 @@ inputRef.addEventListener('blur', onBlurBorderColor);
 function onBlurBorderColor(event) {
   let inputValue = event.currentTarget.value.trim();
   if (inputValue.length === Number(inputRef.dataset.length)) {
+    const currentInvalidInput = document.querySelector('.invalid');
+    currentInvalidInput?.inputRef.classList.remove('invalid');
     inputRef.classList.add('valid');
-    inputRef.classList.remove('invalid');
   }
   if (inputRef.value.length === 0) {
     inputRef.classList.remove('valid');
