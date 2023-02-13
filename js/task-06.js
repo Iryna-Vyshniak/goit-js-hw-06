@@ -29,41 +29,44 @@ document.querySelector('body').style.backgroundColor = '#EBECF0';
 const inputRef = document.getElementById('validation-input');
 inputRef.addEventListener('blur', onBlurBorderColor);
 
-// var1
+// var 1
+
 function onBlurBorderColor(event) {
-  let inputValue = event.currentTarget.value.trim();
-  if (inputValue.length === Number(inputRef.dataset.length)) {
-    const currentInvalidInput = document.querySelector('.invalid');
-    currentInvalidInput?.inputRef.classList.remove('invalid');
+  const inputDataLength = Number(inputRef.dataset.length);
+  const inputValueLength = Number(inputRef.value.trim().length);
+
+  if (inputValueLength === inputDataLength) {
     inputRef.classList.add('valid');
+    inputRef.classList.remove('invalid');
   }
-  if (inputRef.value.length === 0) {
+  if (inputValueLength === 0) {
     inputRef.classList.remove('valid');
     inputRef.classList.remove('invalid');
   }
-  if (
-    inputRef.value.length !== Number(inputRef.dataset.length) &&
-    inputRef.value.length !== 0
-  ) {
+  if (inputValueLength !== inputDataLength && inputValueLength !== 0) {
     inputRef.classList.add('invalid');
   }
 }
 
 // var 2
-/*
-function onBlurBorderColor(event) {
-    const inputValue = inputRef.getAttribute('data-length');
-    
-    if (inputRef.value.length === Number(inputValue)) {
-        inputRef.classList.add('valid');
-        inputRef.classList.remove('invalid');
-    }
-    if (inputRef.value.length === 0) {
-        inputRef.classList.remove('valid');
-        inputRef.classList.remove('invalid');
-    }
-    if (inputRef.value.length !== Number(inputValue) && inputRef.value.length !== 0) {
-        inputRef.classList.add('invalid');
-    }
-}
-*/
+
+// function onBlurBorderColor(e) {
+//   const inputDataLength = Number(e.currentTarget.dataset.length);
+//   const inputValueLength = Number(e.currentTarget.value.trim().length);
+
+//   switch (inputValueLength) {
+//     case inputDataLength:
+//       //console.log(inputValueLength);
+//       inputRef.classList.add('valid');
+//       inputRef.classList.remove('invalid');
+//       break;
+//     case 0:
+//       //console.log(inputValueLength);
+//       inputRef.classList.remove('invalid');
+//       inputRef.classList.remove('valid');
+//       break;
+//     default:
+//       //console.log(inputValueLength);
+//       inputRef.classList.add('invalid');
+//   }
+// }
