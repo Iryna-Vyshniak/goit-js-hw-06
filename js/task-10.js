@@ -23,7 +23,7 @@ function getRandomHexColor() {
 Створити функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 */
 
-document.querySelector('body').style.backgroundColor = '#abbbc4';
+document.body.style.backgroundColor = '#abbbc4';
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;

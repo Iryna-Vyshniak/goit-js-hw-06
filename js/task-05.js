@@ -33,7 +33,7 @@ const getInputValue = ({ currentTarget }) => {
   }
 };
 
-// inputRef.addEventListener('input', getInputValue);
+inputRef.addEventListener('input', getInputValue);
 
 // // var 3
 
